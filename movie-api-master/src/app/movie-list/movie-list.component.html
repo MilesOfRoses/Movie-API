@@ -1,17 +1,20 @@
 <app-search-criteria (onSearch)="search($event)"></app-search-criteria>
+<main>
+  <div class="searchList" *ngFor="let movie of movieSearch">
+    <img src="https://image.tmdb.org/t/p/w200{{ movie.poster_path}}" alt="">
+    <p>Title: {{ movie.title }}</p>
+    <p> Overview: {{ movie.overview }}</p>
+    <button (click)="addToWatchlist(movie.title)">Add to WatchList</button>
 
-<div *ngFor="let movie of movieSearch">
-<img src="https://image.tmdb.org/t/p/w200{{ movie.poster_path}}" alt="">
-<p>Title: {{ movie.title }}</p>
-<p> Overview: {{ movie.overview }}</p>
-<button (click)="addToWatchlist(movie.title)">Add to WatchList</button>
-<hr>
+  </div>
 
-</div>
-
-<div class="watchList">
-  <h3>watch list</h3>
-  <p>This is where your saved movies will be stored</p>
-  <!-- <span>{{ movieTitle }}</span> -->
-</div>
-
+  <div class="watchList">
+    <h3>watch list</h3>
+    <ol>
+    <div *ngFor="let li of watchlist">
+        <!-- <p>This is where your saved movies will be stored</p> -->
+        <li>{{ li }}</li>
+    </div>
+    </ol>
+  </div>
+</main>

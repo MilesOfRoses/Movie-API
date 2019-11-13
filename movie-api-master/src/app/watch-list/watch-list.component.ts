@@ -9,9 +9,9 @@ import { MovieListComponent } from '../movie-list/movie-list.component';
 export class WatchListComponent implements OnInit {
 
   constructor() {  }
-  addToWatchlist() {
-    console.log('Add to watchlist button was pressed');
-  }
+  // addToWatchlist() {
+  //   console.log('Add to watchlist button was pressed');
+  // }
 
   ngOnInit() {
   }

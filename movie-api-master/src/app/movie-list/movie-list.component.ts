@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { SearchCriteriaService } from '../search-criteria/search-criteria.service';
 
 @Component({
@@ -9,9 +9,13 @@ import { SearchCriteriaService } from '../search-criteria/search-criteria.servic
 export class MovieListComponent implements OnInit {
 
   constructor(private searchService: SearchCriteriaService) { }
+
+  watchlist = ['Example saved movie 1', 'Example saved movie 2', 'Example saved movie 3' ];
+
   addToWatchlist(movieTitle) {
     console.log(`The movie ${movieTitle} was added to the watchlist` );
-    return movieTitle;
+    this.watchlist.unshift(movieTitle);  // add to the array
+    console.log(this.watchlist);
   }
 
 
